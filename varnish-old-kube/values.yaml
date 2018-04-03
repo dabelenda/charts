@@ -1,0 +1,41 @@
+## Camptocamp Varnish image
+## ref: https://hub.docker.com/r/camptocamp/varnish/tags/
+##
+varnishImage: camptocamp/varnish:20170802-1
+
+## Camptocamp varnishkafka image
+## ref: https://hub.docker.com/r/camptocamp/varnish/tags/
+##
+kafkaImage: camptocamp/varnish:20170802-1
+
+## Camptocamp Varnishkafka image
+## ref: https://hub.docker.com/r/camptocamp/varnish-kafka/tags/
+
+## Specify a imagePullPolicy
+## ref: http://kubernetes.io/docs/user-guide/images/#pre-pulling-images
+##
+imagePullPolicy: IfNotPresent
+
+## Number of Varnish instances to be deployed by chart
+replicas: 1
+
+## Select if varnish is published using an Ingress
+ingressEnabled: false
+
+## Select if varnish is published using an OpenShift Route
+routeEnabled: false
+
+## OpenShift route configuration for TLS
+## defaults to no TLS
+#routeTls:
+#  policy: Redirect
+#  termination: edge
+
+## OpenShift route wildardPolicy setting
+routeWildcardPolicy: "None"
+
+## Size in MB for the maximum malloc Storage engine of Varnish
+varnishMallocLimit: 256
+
+## Kafka secret for varnishkafka connection to broker
+#kafkaSecret: 
